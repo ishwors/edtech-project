@@ -8,13 +8,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Favicon -->
-    <link rel="shortcut icon" href="favicon.png">
+    <link rel="shortcut icon" href="{% static 'favicon.png' %}">
 
     <!-- Font -->
     <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Fredoka+One&amp;family=Lora:wght@400;700&amp;family=Montserrat:wght@400;500;600;700&amp;family=Nunito:wght@400;700&amp;display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&amp;family=Lora:wght@400;700&amp;family=Montserrat:wght@400;500;600;700&amp;family=Nunito:wght@400;700&amp;display=swap" rel="stylesheet">
 
     <!-- Libs CSS -->
     <link rel="stylesheet" href="{% static 'assets/fonts/fontawesome/fontawesome.css' %}">
@@ -36,11 +34,10 @@
     <title>Skola Home v5</title>
 
 </head>
-
 <body>
     {% include 'components/modals.html' %}
     {% include 'components/header.html' %}
-    {% block content %}{% endblock %}
+        {% block content %}{% endblock %}
     {% include 'components/footer.html' %}
 
     <!-- JAVASCRIPT
@@ -74,4 +71,6 @@
 
 
 </body>
+
+
 </html>
