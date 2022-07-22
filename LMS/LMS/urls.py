@@ -8,15 +8,17 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('base',views.BASE,name='base'),
 
-    path('',views.HOME,name='home'),
-    path('courses',views.SINGLE_COURSE,name='single_course'),
-
-    path('contact',views.CONTACT_US,name='contact_us'),
-    path('about',views.ABOUT_US,name='about_us'),
-
-    path('accounts/register',user_login.REGISTER,name='register'),
+    path('base', views.BASE, name='base'),
+    path('404', views.PAGE_NOT_FOUND, name='404'),
+    path('', views.HOME, name='home'),
+    path('courses', views.SINGLE_COURSE, name='single_course'),
+    path('courses/filter-data', views.filter_data, name="filter-data"),
+    path('search', views.SEARCH_COURSE, name="search_course"),
+    path('course/<slug:slug>', views.COURSE_DETAILS, name='course_details'),
+    path('contact', views.CONTACT_US, name='contact_us'),
+    path('about', views.ABOUT_US, name='about_us'),
+    path('accounts/register', user_login.REGISTER, name='register'),
     path('accounts/', include('django.contrib.auth.urls')),
     path('doLogin', user_login.DO_LOGIN, name='doLogin'),
     path('accounts/profile', user_login.PROFILE, name='profile'),
