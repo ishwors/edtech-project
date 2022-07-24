@@ -1,3 +1,4 @@
+from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from multiprocessing import context
 from unicodedata import category
@@ -89,6 +90,7 @@ def SEARCH_COURSE(request):
     }
     return render(request,'search/search.html', context)
 
+@login_required(login_url="/accounts/login/")
 def COURSE_DETAILS(request, slug):
     category = Categories.get_all_category(Categories)
     time_duration = Video.objects.filter(course__slug = slug).aggregate(sum=Sum('time_duration'))
@@ -134,6 +136,7 @@ def CHECKOUT(request,slug):
         return redirect('my_course')
     return render(request,'checkout/checkout.html')
 
+@login_required(login_url="/accounts/login/")
 def MY_COURSE(request):
     course = UserCourse.objects.filter(user = request.user)
 

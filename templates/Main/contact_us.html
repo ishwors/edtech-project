@@ -5,21 +5,9 @@
 
 <!-- PAGE TITLE
     ================================================== -->
-    <header class="py-8 py-md-11" style="background-image: none;">
+    <header class="py-8 py-md-10" style="background-image: none;">
         <div class="container text-center py-xl-2">
             <h1 class="display-4 fw-semi-bold mb-0">Get in touch today!</h1>
-            <nav aria-label="breadcrumb">
-                <ol class="breadcrumb breadcrumb-scroll justify-content-center">
-                    <li class="breadcrumb-item">
-                        <a class="text-gray-800" href="#">
-                            Home
-                        </a>
-                    </li>
-                    <li class="breadcrumb-item text-gray-800 active" aria-current="page">
-                        Get in touch today!
-                    </li>
-                </ol>
-            </nav>
         </div>
         <!-- Img -->
         <img class="d-none img-fluid" src="...html" alt="...">
@@ -29,9 +17,12 @@
     <!-- CONTACT
     ================================================== -->
     <div class="container">
-        <div class="row row-cols-md-2 mb-8 mb-lg-11">
-            <div class="col-md">
-                <h1 class="mb-6">Contact Details</h1>
+        <div class="row row-cols-md-2 mb-8 mb-lg-11 d-flex justify-content-center align-items-center">
+            <div class="col-md ">
+                <div class="d-flex justify-content-center align-items-center">
+                    <h1 class="mb-10">Contact Details</h1>
+                </div>
+                
 
                 <div class="row row-cols-12 row-cols-xl-2">
                     <div class="col-xl mb-6">
@@ -159,35 +150,10 @@
                     </div>
                 </div>
             </div>
-
-            <div class="col-md">
-                <h1 class="mb-6">Have A Question?</h1>
-                <form class="row" method="post">
-                    {% csrf_token %}
-                    <div class="form-group mb-6 col-xl-6">
-                        <label for="exampleInputTitle1">Name</label>
-                        <input type="text" class="form-control placeholder-1" id="exampleInputTitle1" placeholder="" name="name">
-                    </div>
-
-                    <div class="form-group mb-6 col-xl-6">
-                        <label for="exampleInputTitle2">Email</label>
-                        <input type="email" class="form-control placeholder-1" id="exampleInputTitle2" placeholder="" name="email">
-                    </div>
-
-                    <div class="form-group mb-6 col-12">
-                        <label for="exampleFormControlTextarea1">Message</label>
-                        <textarea class="form-control placeholder-1" id="exampleFormControlTextarea1" rows="6" placeholder="Content" name="message"></textarea>
-                    </div>
-
-                    <div class="col-12">
-                        <button type="submit" class="btn btn-primary btn-block mw-md-300p">SEND</button>
-                    </div>
-                </form>
-            </div>
         </div>
 
-        <div class="mb-8 mb-md-11 rounded overflow-hidden grayscal-hover">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d235013.70717427065!2d72.43965389034543!3d23.020497772707397!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e848aba5bd449%3A0x4fcedd11614f6516!2sAhmedabad%2C%20Gujarat!5e0!3m2!1sen!2sin!4v1644600208366!5m2!1sen!2sin" width="1200" height="550" style="border:0;width: 100%;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+        <div class="mb-8 mb-md-11 rounded overflow-hidden grayscal-hover">       
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d8401.783205614638!2d85.33776255068445!3d27.701395263687246!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb199940d81663%3A0xaf36b9b58903050f!2sApex%20College!5e0!3m2!1sen!2snp!4v1658658413555!5m2!1sen!2snp" width="1200" height="550" style="border:0;width: 100%;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
         </div>
     </div>
 
