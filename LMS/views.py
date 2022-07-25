@@ -134,7 +134,11 @@ def CHECKOUT(request,slug):
         course.save()
         messages.success(request,'Course are Successfully Enrolled !')
         return redirect('my_course')
-    return render(request,'checkout/checkout.html')
+    
+    context = {
+        'course' :course
+    }
+    return render(request,'checkout/checkout.html',context)
 
 @login_required(login_url="/accounts/login/")
 def MY_COURSE(request):
