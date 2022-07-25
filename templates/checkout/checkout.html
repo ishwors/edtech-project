@@ -28,7 +28,7 @@
     <!-- SHOP CHECKOUT
         ================================================== -->
     <div class="container pb-6 pb-xl-10">
-        <form name="checkout" method="post" class="checkout woocommerce-checkout d-flex justify-content-center align-items-center" action="?action=create_payment" novalidate="" >
+        <form name="checkout" method="post" class="checkout woocommerce-checkout d-flex justify-content-center align-items-center" action="/payment/checkout/" >
             {% csrf_token %}
     
             <div id="order_review" class="woocommerce-checkout-review-order">
@@ -68,14 +68,16 @@
                         </tfoot>
                     </table>
                 </div>
-    
+
                 <div id="payment" class="woocommerce-checkout-payment">
-                    <div class="form-row place-order">
-                        <a href="shop-order-completed.html" class="btn btn-primary btn-block">
-                            PLACE ORDER
-                        </a>
+                    <div class="form-row place-order d-flex justify-content-center align-items-center">
+                        <input type="text" class="form-control" name="token" placeholder="Token" />
+                        <input type="hidden" name="amount" value="{% discount_calculation course.price course.discount %}" /><br>
+                        <button type="submit" class="btn btn-primary btn-sm ml-4" type="submit" style="align-items: center;"><i class="fa fa-shopping-cart"
+                                aria-hidden="true" ></i> PLACE ORDER </button>
                     </div>
                 </div>
+
             </div>
         </form>
     </div>

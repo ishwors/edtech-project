@@ -105,7 +105,7 @@ def COURSE_DETAILS(request, slug):
     if course.exists():
         course = course.first()
     else:
-        return redirect('404')
+        return redirect('error/404.html')
 
     context = {
         'course': course,
@@ -131,6 +131,7 @@ def CHECKOUT(request,slug):
             user = request.user,
             course = course,
         )
+
         course.save()
         messages.success(request,'Course are Successfully Enrolled !')
         return redirect('my_course')
@@ -148,3 +149,11 @@ def MY_COURSE(request):
         'course':course,
     }
     return render(request,'course/my-course.html',context)
+
+def success_page(request):
+    message = request.session["message"]
+    return render(request, "payment_msg/success.html", {"message": message})
+    
+def error_page(request):
+    message = request.session["message"]
+    return render(request, "payment_msg/error.html", {"message": message})
