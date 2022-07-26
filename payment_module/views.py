@@ -7,9 +7,10 @@ from .models import PaymentGateway
 from datetime import date
 from django.db import transaction
 from django.urls import reverse
+from app.models import UserCourse, Course
 
 # Create your views here.
-def confirmpayment(request):
+def confirmpayment(request,slug):
     if request.method == "POST":
         token = request.POST.get("token")
         amount = request.POST.get("amount")
@@ -28,6 +29,15 @@ def confirmpayment(request):
             return redirect(reverse('error_page'))
 
         else:
+            course = Course.objects.get(slug = slug)
+    
+            course = UserCourse(
+                user = request.user,
+                course = course,
+            )
+
+            course.save()
+
             request.session["message"] = f"Payment successfully completed with NRs. {amount} from your balance!"
             return redirect(reverse('success_page'))
 

@@ -24,11 +24,12 @@ urlpatterns = [
     path('doLogin', user_login.DO_LOGIN, name='doLogin'),
     path('accounts/profile', user_login.PROFILE, name='profile'),
     path('accounts/profile/update', user_login.PROFILE_UPDATE, name='profile_update'),
+
     path('checkout/<slug:slug>',views.CHECKOUT, name='checkout'),
     path('my-course',views.MY_COURSE, name='my_course'),
 
     path('payment/', include('payment_module.urls')),
-    path('success_page/', success_page, name="success_page"),
+    path('success_page/',views.success_page, name="success_page"),
     path('error_page/', error_page, name="error_page"),
 
 ] + static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)

@@ -105,7 +105,7 @@ def COURSE_DETAILS(request, slug):
     if course.exists():
         course = course.first()
     else:
-        return redirect('error/404.html')
+        return redirect(request,'error/404.html')
 
     context = {
         'course': course,
@@ -153,6 +153,7 @@ def MY_COURSE(request):
 def success_page(request):
     message = request.session["message"]
     return render(request, "payment_msg/success.html", {"message": message})
+
     
 def error_page(request):
     message = request.session["message"]

@@ -28,7 +28,7 @@
     <!-- SHOP CHECKOUT
         ================================================== -->
     <div class="container pb-6 pb-xl-10">
-        <form name="checkout" method="post" class="checkout woocommerce-checkout d-flex justify-content-center align-items-center" action="/payment/checkout/" >
+        <form name="checkout" method="post" class="checkout woocommerce-checkout d-flex justify-content-center align-items-center" action="/payment/checkout/{{course.slug}}" >
             {% csrf_token %}
     
             <div id="order_review" class="woocommerce-checkout-review-order">
