@@ -45,7 +45,7 @@ def make_payment(token, amount):
     try:
         payment_gateway = PaymentGateway.objects.get(token=token)
     except:
-        raise Exception(f"Invalid token '{token}'")
+        raise Exception(f"Invalid token")
 
     # Check if available amount is sufficient for payment
     if payment_gateway.balance < amount:
